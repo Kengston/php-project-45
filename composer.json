@@ -6,5 +6,8 @@
             "name": "Kengston"
         }
     ],
+    "bin": [
+        "bin/brain-games"
+    ],
     "require": {}
 }
