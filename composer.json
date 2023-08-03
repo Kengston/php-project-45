@@ -16,9 +16,6 @@
         "squizlabs/php_codesniffer": "^3.6"
     },
     "autoload": {
-        "psr-4": {
-            "BrainGames\\": "src/"
-        },
         "files": [
             "src/Cli.php"
         ]
