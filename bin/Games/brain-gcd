@@ -1,0 +1,47 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+use BrainGames\Cli;
+use function cli\line;
+use function cli\prompt;
+
+function findGcd(int $a, int $b): int
+{
+    while ($b !== 0) {
+        $remainder = $a % $b;
+        $a = $b;
+        $b = $remainder;
+    }
+    return abs($a);
+}
+
+function runBrainGcd(string $name): void {
+    line('Find the greatest common divisor of given numbers.');
+
+    $numCount = 3;
+
+    for ($i = 0; $i < $numCount; $i++) {
+        $firstNum = rand(1, 100);
+        $secondNum = rand(1, 100);
+        $realAnswer = findGcd($firstNum, $secondNum);
+
+        line("Question: {$firstNum} {$secondNum}");
+        $userAnswer = prompt('Your answer');
+
+        if ($userAnswer != $realAnswer) {
+            line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$realAnswer}'.");
+            line("Let's try again, {$name}!");
+            return;
+        }
+
+        line('Correct!');
+    }
+
+    line("Congratulations, {$name}!");
+
+}
+
+$name = Cli\welcomeUser();
+runBrainGcd($name);
