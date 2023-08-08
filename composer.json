@@ -8,8 +8,8 @@
     ],
     "bin": [
         "bin/brain-games",
-        "bin/brain-even",
-        "bin/brain-calc",
+        "bin/Games/brain-even",
+        "bin/Games/brain-calc",
         "bin/Engine.php"
     ],
     "require": {

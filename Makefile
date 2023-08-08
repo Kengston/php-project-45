@@ -5,10 +5,10 @@ brain-games:
 	./bin/brain-games
 
 brain-even:
-	./bin/brain-even
+	./bin/Games/brain-even
 
 brain-calc:
-	./bin/brain-calc
+	./bin/Games/brain-calc
 
 validate:
 	composer validate
