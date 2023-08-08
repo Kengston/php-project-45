@@ -9,8 +9,7 @@
     "bin": [
         "bin/brain-games",
         "bin/Games/brain-even",
-        "bin/Games/brain-calc",
-        "bin/Engine.php"
+        "bin/Games/brain-calc"
     ],
     "require": {
         "wp-cli/php-cli-tools": "^0.11.19"
