@@ -7,19 +7,29 @@ use BrainGames\Cli;
 use function cli\line;
 use function cli\prompt;
 
-function isEven(int $number) : bool {
-    return $number % 2 === 0;
-}
-
-function runEvenGame(string $name): void {
-
+function runBrainCalc(string $name): void {
     line('Answer "yes" if the number is even, otherwise answer "no".');
 
     $numCount = 3;
 
     for ($i = 0; $i < $numCount; $i++) {
-        $questionCount = rand(1, 100);
-        $realAnswer = isEven($questionCount) ? 'yes' : 'no';
+        $keyArray = ["*", "+", "-"];
+        $randomKey = $keyArray[array_rand($keyArray)];
+        $firstNum = rand(1, 100);
+        $secondNum = rand(1, 100);
+        $questionCount = $firstNum . " " . $randomKey . " " . $secondNum;
+
+        switch ($randomKey) {
+            case "+":
+                $realAnswer = $firstNum + $secondNum;
+                break;
+            case "*":
+                $realAnswer = $firstNum * $secondNum;
+                break;
+            case "-":
+                $realAnswer = $firstNum - $secondNum;
+                break;
+        }
 
         line("Question: {$questionCount}");
         $userAnswer = prompt('Your answer');
@@ -37,4 +47,4 @@ function runEvenGame(string $name): void {
 }
 
 $name = Cli\welcomeUser();
-runEvenGame($name);
+runBrainCalc($name);
