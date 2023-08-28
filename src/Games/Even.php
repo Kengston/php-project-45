@@ -17,6 +17,7 @@ function start(): void
 {
     $getRound = function (): array {
         $question = rand(MIN, MAX);
+        echo "Question: $question\n"; // Выводим вопрос
         $answer = isEven($question) ? "yes" : "no";
         return [$question, $answer];
     };
