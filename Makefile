@@ -1,29 +1,23 @@
-install:
-	composer install
+install: 
+	npm install
 
-brain-games:
-	./bin/brain-games
+start-even:
+	npx babel-node -- src/bin/brain-even.js
 
-brain-even:
-	./bin/Games/brain-even
+start-calc:
+	npx babel-node -- src/bin/brain-calc.js
 
-brain-calc:
-	./bin/Games/brain-calc
+start-gcd:
+	npx babel-node -- src/bin/brain-gcd.js
 
-brain-gcd:
-	./bin/Games/brain-gcd
+start-prog:
+	npx babel-node -- src/bin/brain-progression.js
 
-brain-progression:
-	./bin/Games/brain-progression
+start-prime:
+	npx babel-node -- src/bin/brain-prime.js
 
-brain-prime:
-	./bin/Games/brain-prime
-
-validate:
-	composer validate
+publish:
+	npm publish
 
 lint:
-	composer exec --verbose phpcs -- --standard=PSR12 src bin
-
-
-
+	npx eslint .
