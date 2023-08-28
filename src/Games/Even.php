@@ -6,7 +6,7 @@ use function Brain\Games\Engine\play;
 
 const MIN = 1;
 const MAX = 101;
-const INSTRUCTIONS = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+const INSTRUCTIONS = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
 function isEven(int $number): bool
 {
@@ -17,9 +17,9 @@ function start(): void
 {
     $getRound = function (): array {
         $question = rand(MIN, MAX);
-        echo "Question: $question\n"; // Выводим вопрос
         $answer = isEven($question) ? "yes" : "no";
         return [$question, $answer];
     };
     play(INSTRUCTIONS, $getRound);
 }
+
