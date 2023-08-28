@@ -22,4 +22,3 @@ function start(): void
     };
     play(INSTRUCTIONS, $getRound);
 }
-
