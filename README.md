@@ -1,20 +1,34 @@
-# Brain Games
-```npm install -g brain-games-vnk```
+### Hexlet tests and linter status:
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/986882ff524928d33c1b/maintainability)](https://codeclimate.com/github/vnk729/project-lvl1-s454/maintainability)
-[![Build Status](https://travis-ci.org/vnk729/project-lvl1-s454.svg?branch=master)](https://travis-ci.org/vnk729/project-lvl1-s454)
+[![Actions Status](https://github.com/nastasja83/php-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/nastasja83/php-project-lvl1/actions)
+[![Maintainability](https://codeclimate.com/github/nastasja83/php-project-lvl1/badges/gpa.svg)](https://codeclimate.com/github/nastasja83/php-project-lvl1)
+[![Issue Count](https://codeclimate.com/github/nastasja83/php-project-lvl1/badges/issue_count.svg)](https://codeclimate.com/github/nastasja83/php-project-lvl1/issues)
+[![Github Actions Status](https://github.com/nastasja83/php-project-lvl1/workflows/PHP%20CI/badge.svg)](https://github.com/nastasja83/php-project-lvl1/actions)
+### Setup:
+```sh
+$ git clone https://github.com/nastasja83/php-project-lvl1.git
 
-### Install and run ```brain-even``` game
-[![asciicast](https://asciinema.org/a/gmLaaUy8XHvu1XKmz8e8K8MU1.svg)](https://asciinema.org/a/gmLaaUy8XHvu1XKmz8e8K8MU1)
+$ make install
+```
+[![asciicast](https://asciinema.org/a/386641.svg)](https://asciinema.org/a/386641)
+### Games:
 
-### Install and run ```brain-calc``` game
-[![asciicast](https://asciinema.org/a/bpNwfkNftKBFBmhk1uMQqyKJC.svg)](https://asciinema.org/a/bpNwfkNftKBFBmhk1uMQqyKJC)
+brain-even
 
-### Install and run ```brain-gcd``` game
-[![asciicast](https://asciinema.org/a/7TBhnHmIhfOTCIuJoW9qyKSte.svg)](https://asciinema.org/a/7TBhnHmIhfOTCIuJoW9qyKSte)
+[![asciicast](https://asciinema.org/a/386643.svg)](https://asciinema.org/a/386643)
 
-### Install and run ```brain-progression``` game
-[![asciicast](https://asciinema.org/a/EIOl3Gv9MYQkyMtvDD5Nagf7X.svg)](https://asciinema.org/a/EIOl3Gv9MYQkyMtvDD5Nagf7X)
+brain-calc
 
-### Install and run ```brain-prime``` game
-[![asciicast](https://asciinema.org/a/4VETw45Z5NHV3wlzvLKKWiCzV.svg)](https://asciinema.org/a/4VETw45Z5NHV3wlzvLKKWiCzV)
+[![asciicast](https://asciinema.org/a/386640.svg)](https://asciinema.org/a/386640)
+
+brain-gcd
+
+[![asciicast](https://asciinema.org/a/386667.svg)](https://asciinema.org/a/386667)
+
+brain-progression
+
+[![asciicast](https://asciinema.org/a/386938.svg)](https://asciinema.org/a/386938)
+
+brain-prime
+
+[![asciicast](https://asciinema.org/a/386960.svg)](https://asciinema.org/a/386960)
