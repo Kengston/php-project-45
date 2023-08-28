@@ -1,34 +1,24 @@
 <?php
 
-namespace BrainGames\Games\Even;
+namespace Brain\Games\Games\Even;
 
 use function Brain\Games\Engine\play;
 
-const MIN_INTEGER = 1;
-const MAX_INTEGER = 100;
-const DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+const MIN = 1;
+const MAX = 101;
+const INSTRUCTIONS = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-function getQuestion(): int
+function isEven(int $number): bool
 {
-    return random_int(MIN_INTEGER, MAX_INTEGER);
+    return $number % 2 === 0;
 }
 
-function isEven(int $int): bool
+function start(): void
 {
-    return $int % 2 === 0;
-}
-
-function getCorrectAnswer(int $int): string
-{
-    return isEven($int) ? 'yes' : 'no';
-}
-
-function run(): void
-{
-    $gameData = function (): array {
-        $question = getQuestion();
-        $correctAnswer = getCorrectAnswer($question);
-        return [$question, $correctAnswer];
+    $getRound = function (): array {
+        $question = rand(MIN, MAX);
+        $answer = isEven($question) ? "yes" : "no";
+        return [$question, $answer];
     };
-    play($gameData, DESCRIPTION);
+    play(INSTRUCTIONS, $getRound);
 }

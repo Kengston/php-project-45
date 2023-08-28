@@ -1,43 +1,34 @@
 <?php
 
-namespace BrainGames\Games\Prime;
+namespace Brain\Games\Games\Prime;
 
 use function Brain\Games\Engine\play;
 
-const MIN_INTEGER = 1;
-const MAX_INTEGER = 20;
-const DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+const MIN = 1;
+const MAX = 101;
+const INSTRUCTIONS = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-function getInteger(): int
+function isPrime(int $number): bool
 {
-    return random_int(MIN_INTEGER, MAX_INTEGER);
-}
-
-function isPrime(int $int): bool
-{
-    if ($int === 1) {
+    if ($number < 2) {
         return false;
+    } elseif ($number < 4) {
+        return true;
     }
-    for ($i = 2; $i * $i <= $int; $i++) {
-        if ($int % $i === 0) {
+    for ($i = 2, $max = sqrt($number) + 1; $i < $max; $i++) {
+        if ($number % $i === 0) {
             return false;
         }
     }
     return true;
 }
 
-function getCorrectAnswer(int $int): string
+function start(): void
 {
-    return isPrime($int) ? 'yes' : 'no';
-}
-
-function run(): void
-{
-    $gameData = function (): array {
-        $question = getInteger();
-        $correctAnswer = getCorrectAnswer($question);
-
-        return [$question, $correctAnswer];
+    $getRound = function (): array {
+        $question = rand(MIN, MAX);
+        $answer = isPrime($question) ? "yes" : "no";
+        return [$question, $answer];
     };
-    play($gameData, DESCRIPTION);
+    play(INSTRUCTIONS, $getRound);
 }

@@ -1,34 +1,29 @@
 ### Hexlet tests and linter status:
+[![Actions Status](https://github.com/pickTD/php-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/pickTD/php-project-lvl1/actions)
+[![CI](https://github.com/pickTD/php-project-lvl1/workflows/CI/badge.svg)](https://github.com/pickTD/php-project-lvl1/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b270111da2ba42048db0/maintainability)](https://codeclimate.com/github/pickTD/php-project-lvl1/maintainability)
 
-[![Actions Status](https://github.com/nastasja83/php-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/nastasja83/php-project-lvl1/actions)
-[![Maintainability](https://codeclimate.com/github/nastasja83/php-project-lvl1/badges/gpa.svg)](https://codeclimate.com/github/nastasja83/php-project-lvl1)
-[![Issue Count](https://codeclimate.com/github/nastasja83/php-project-lvl1/badges/issue_count.svg)](https://codeclimate.com/github/nastasja83/php-project-lvl1/issues)
-[![Github Actions Status](https://github.com/nastasja83/php-project-lvl1/workflows/PHP%20CI/badge.svg)](https://github.com/nastasja83/php-project-lvl1/actions)
-### Setup:
-```sh
-$ git clone https://github.com/nastasja83/php-project-lvl1.git
+# Set of console mini games
+### To win, you need to correctly answer 3 questions in a row.
 
-$ make install
-```
-[![asciicast](https://asciinema.org/a/386641.svg)](https://asciinema.org/a/386641)
-### Games:
+## Brain-even
+You will be prompted to determine if the specified number is even or not. Answer "yes" if the number is even, otherwise answer "no".
 
-brain-even
+[![asciicast](https://asciinema.org/a/384770.svg)](https://asciinema.org/a/384770)
 
-[![asciicast](https://asciinema.org/a/386643.svg)](https://asciinema.org/a/386643)
+## Brain-calc
+Calculate the result of a mathematical expression.
 
-brain-calc
+[![asciicast](https://asciinema.org/a/384773.svg)](https://asciinema.org/a/384773)
+## Brain-gcd
+Find the greatest common divisor of given numbers.
 
-[![asciicast](https://asciinema.org/a/386640.svg)](https://asciinema.org/a/386640)
+[![asciicast](https://asciinema.org/a/384772.svg)](https://asciinema.org/a/384772)
+## Brain-progression
+What number is missing in the progression?
 
-brain-gcd
+[![asciicast](https://asciinema.org/a/384775.svg)](https://asciinema.org/a/384775)
+## Brain-prime
+You will be prompted to determine if the specified number is prime or not. Answer "yes" if given number is prime. Otherwise answer "no".
 
-[![asciicast](https://asciinema.org/a/386667.svg)](https://asciinema.org/a/386667)
-
-brain-progression
-
-[![asciicast](https://asciinema.org/a/386938.svg)](https://asciinema.org/a/386938)
-
-brain-prime
-
-[![asciicast](https://asciinema.org/a/386960.svg)](https://asciinema.org/a/386960)
+[![asciicast](https://asciinema.org/a/384776.svg)](https://asciinema.org/a/384776)

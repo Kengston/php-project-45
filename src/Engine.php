@@ -5,27 +5,29 @@ namespace Brain\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-const ATTEMPTS_COUNT = 3;
+const GOAL = 3;
 
-function play(callable $gameData, string $description): void
+function play(string $instructions, callable $getRound): void
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
+    line("Welcome to the Brain Games!");
+    $name = prompt("May I have your name", "", "? ");
     line("Hello, %s!", $name);
-    line("$description");
+    line($instructions);
+    $answersCount = 0;
 
-    for ($attempt = 0; $attempt < ATTEMPTS_COUNT; $attempt += 1) {
-        [$question, $correctAnswer] = $gameData();
-        line("Question: {$question}");
-        $answer = strtolower(prompt('Your answer'));
-
-        if ($answer === $correctAnswer) {
-            line("Correct!");
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+    while ($answersCount < GOAL) {
+        [$question, $correctAnswer] = $getRound();
+        line("Question: %s", $question);
+        $answer = prompt("Your answer");
+        if ($answer !== $correctAnswer) {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
             line("Let's try again, %s!", $name);
-            return;
+            break;
         }
+        line("Correct!");
+        $answersCount += 1;
     }
-    line("Congratulations, %s!", $name);
+    if ($answersCount === GOAL) {
+        line("Congratulations, %s!", $name);
+    }
 }

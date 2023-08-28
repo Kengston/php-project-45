@@ -1,39 +1,38 @@
 <?php
 
-namespace BrainGames\Games\Gcd;
+namespace Brain\Games\Games\Gcd;
 
 use function Brain\Games\Engine\play;
 
-const MIN_INTEGER = 2;
-const MAX_INTEGER = 50;
-const DESCRIPTION = "Find the greatest common divisor of given numbers.";
+const MIN = 1;
+const MAX = 9;
+const INSTRUCTIONS = "Find the greatest common divisor of given numbers.";
 
-function getInteger(): int
+function getQuestion(): array
 {
-    return random_int(MIN_INTEGER, MAX_INTEGER);
+    $base = rand(MIN, MAX);
+    $mul1 = rand(MIN, MAX);
+    $mul2 = rand(MIN, MAX);
+    $a = $base * $mul1;
+    $b = $base * $mul2;
+    return [$a, $b];
 }
 
-function getGcd(int $int1, int $int2): int
+function gcd(int $a, int $b): int
 {
-    $temp = 0;
-
-    while ($int2 != 0) {
-        $temp = $int2;
-        $int2 = $int1 % $int2;
-        $int1 = $temp;
+    if ($a % $b === 0) {
+        return $b;
     }
-    return $int1;
+    return gcd($b, $a % $b);
 }
 
-function run(): void
+function start(): void
 {
-    $gameData = function (): array {
-        $int1 = getInteger();
-        $int2 = getInteger();
-        $question = "{$int1} {$int2}";
-        $correctAnswer = getGcd($int1, $int2);
-
-        return [$question, (string) $correctAnswer];
+    $getRound = function (): array {
+        $question = getQuestion();
+        $questionSting = implode(' ', $question);
+        $answer = (string) gcd(...$question);
+        return [$questionSting, $answer];
     };
-    play($gameData, DESCRIPTION);
+    play(INSTRUCTIONS, $getRound);
 }
