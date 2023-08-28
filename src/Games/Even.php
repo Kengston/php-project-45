@@ -6,7 +6,7 @@ use function Brain\Games\Engine\play;
 
 const MIN = 1;
 const MAX = 101;
-const INSTRUCTIONS = 'Answer "yes" if the number is even, otherwise answer "no".';
+const INSTRUCTIONS = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
 function isEven(int $number): bool
 {
